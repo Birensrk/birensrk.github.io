@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bijendra Pasi | Web Developer</title>
   <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --header-bg: #007acc;
+      --card-bg: white;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --header-bg: #1e1e1e;
+      --card-bg: #2a2a2a;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -12,14 +24,15 @@
       font-family: Arial, sans-serif;
     }
     body {
-      background: #f4f4f4;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
+      transition: all 0.3s ease;
     }
     header {
-      background: #007acc;
+      background: var(--header-bg);
       color: #fff;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     header h1 {
@@ -28,8 +41,24 @@
     header p {
       font-size: 1.2rem;
     }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 1rem auto;
+      display: block;
+      border: 3px solid white;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
     section {
-      padding: 2rem;
+      padding: 2rem 1rem;
       max-width: 1000px;
       margin: auto;
     }
@@ -38,16 +67,27 @@
     }
     .skills ul, .contact ul {
       list-style-type: none;
+      padding-left: 0;
     }
     .skills li, .contact li {
       margin-bottom: 0.5rem;
     }
     .project-card {
-      background: white;
+      background: var(--card-bg);
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       margin-bottom: 1rem;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
     }
     footer {
       background: #222;
@@ -63,12 +103,23 @@
     a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
   <header>
+    <img src="Passport Size Photo.jpg" alt="Bijendra Pasi" class="profile-pic" />
     <h1>Bijendra Pasi</h1>
     <p>Web Developer | Building Websites That Work</p>
+    <a class="resume-btn" href="Bijendra_Pasi_CV.pdf" download>Download Resume</a>
   </header>
 
   <section class="about">
@@ -89,12 +140,14 @@
   <section class="projects">
     <h2>Projects</h2>
     <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>A responsive website showcasing my skills, resume, and projects. Built using HTML, CSS, and JavaScript.</p>
+      <h3>Main Portfolio Site</h3>
+      <p>A personal responsive website hosted with GitHub Pages showcasing my profile and skills.</p>
+      <a href="https://birensrk.github.io" target="_blank">Visit Portfolio</a>
     </div>
     <div class="project-card">
-      <h3>Calculator App</h3>
-      <p>A fully functional calculator built using JavaScript, demonstrating core DOM manipulation and event handling.</p>
+      <h3>Todo Software App</h3>
+      <p>A functional To-Do List application with HTML and JS, allowing users to manage daily tasks.</p>
+      <a href="https://birensrk.github.io/TodoSoftware" target="_blank">View Project</a>
     </div>
   </section>
 
@@ -103,12 +156,18 @@
     <ul>
       <li>Email: <a href="mailto:iambirensrk@gmail.com">iambirensrk@gmail.com</a></li>
       <li>GitHub: <a href="https://github.com/birensrk" target="_blank">github.com/birensrk</a></li>
-      <li>Location: Nepal </li>
+      <li>Location: Nepal / United Kingdom</li>
     </ul>
   </section>
 
   <footer>
     <p>&copy; 2025 Bijendra Pasi | Web Developer</p>
   </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
