@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bijendra Pasi | Web Developer</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       --bg-color: #f4f4f4;
@@ -78,6 +79,10 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.02);
     }
     .resume-btn {
       display: inline-block;
@@ -88,6 +93,14 @@
       border: none;
       border-radius: 5px;
       text-decoration: none;
+    }
+    .social-icons {
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      margin: 0 0.5rem;
+      color: white;
+      font-size: 1.4rem;
     }
     footer {
       background: #222;
@@ -102,6 +115,22 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+    form {
+      margin-top: 1rem;
+    }
+    form input, form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+    }
+    form button {
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
     }
     @media (max-width: 600px) {
       header h1 {
@@ -120,14 +149,19 @@
     <h1>Bijendra Pasi</h1>
     <p>Web Developer | Building Websites That Work</p>
     <a class="resume-btn" href="Bijendra_Pasi_CV.pdf" download>Download Resume</a>
+    <div class="social-icons">
+      <a href="https://github.com/birensrk" target="_blank">🐙</a>
+      <a href="mailto:iambirensrk@gmail.com">✉️</a>
+      <a href="https://www.linkedin.com/in/birensrk" target="_blank">🔗</a>
+    </div>
   </header>
 
-  <section class="about">
+  <section class="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>Proactive and detail-oriented IT professional pursuing an MSc in Computing in the UK, with certifications in JavaScript, Python, and CompTIA. Passionate about creating clean, responsive websites and eager to contribute to impactful digital projects.</p>
   </section>
 
-  <section class="skills">
+  <section class="skills" data-aos="fade-up">
     <h2>Skills</h2>
     <ul>
       <li>HTML5, CSS3, JavaScript</li>
@@ -137,7 +171,7 @@
     </ul>
   </section>
 
-  <section class="projects">
+  <section class="projects" data-aos="fade-up">
     <h2>Projects</h2>
     <div class="project-card">
       <h3>Main Portfolio Site</h3>
@@ -151,23 +185,40 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <ul>
       <li>Email: <a href="mailto:iambirensrk@gmail.com">iambirensrk@gmail.com</a></li>
       <li>GitHub: <a href="https://github.com/birensrk" target="_blank">github.com/birensrk</a></li>
       <li>Location: Nepal / United Kingdom</li>
     </ul>
+    <form action="https://formspree.io/f/mqkrleby" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
     <p>&copy; 2025 Bijendra Pasi | Web Developer</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init();
     function toggleMode() {
       document.body.classList.toggle('dark-mode');
     }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // Replace G-XXXXXXX with your GA ID
   </script>
 </body>
 </html>
